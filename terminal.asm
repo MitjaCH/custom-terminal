@@ -7,6 +7,13 @@
         mov dx, 0
 
         %define NEXL 0x0D, 0x0A
+	
+	push ax
+	push bx
+	push cx
+	push dx
+	push si
+	
         jmp .main
 ;---------------------------------------
 ;-------------------------Load-Driver---
@@ -90,6 +97,13 @@
         jmp .main
 
 .loadkernel:
+
+	pop si
+	pop dx
+	pop cx
+	pop bx
+	pop ax
+
         ret
 
 ;---------------------------------------
